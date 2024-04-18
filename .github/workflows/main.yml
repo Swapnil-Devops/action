@@ -15,4 +15,4 @@ jobs:
         echo "KEY=$(cat ~/.ssh/id_rsa.pub)" >> $GITHUB_OUTPUT
 
     - name: use key in next steps
-      run: echo ${{ steps.ssh_key.outputs.KEY }}
+      run: ${{ steps.ssh_key.outputs.KEY }}
