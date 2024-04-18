@@ -12,7 +12,7 @@ jobs:
       id: ssh_key
       run: |
         ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/id_rsa -N ""
-        echo "PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub)" >> $GITHUB_OUTPUT
+        echo "KEY=$(cat ~/.ssh/id_rsa.pub)" >> $GITHUB_OUTPUT
 
     - name: use key in next steps
-      run: echo ${{ steps.ssh_key.outputs.PUBLIC_KEY }}
+      run: echo ${{ steps.ssh_key.outputs.KEY }}
